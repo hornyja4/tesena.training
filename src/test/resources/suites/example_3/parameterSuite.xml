@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parameter test">
+    <test name="Parameter test">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="version" value="66"/>
+        <parameter name="env" value="PROD"/>
+        <classes>
+            <class name="tesena.automation.training.tests.example_3.ParameterTest" />
+        </classes>
+    </test>
+</suite>

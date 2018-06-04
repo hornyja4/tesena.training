@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parallel Suite" thread-count="2" parallel="tests">
+    <test name="Parallel test 1">
+        <parameter name="test-name" value="Parallel test 1"/>
+        <classes>
+            <class name="tesena.automation.training.tests.example_3.ParallelTest" />
+        </classes>
+    </test>
+    <test name="Parallel test 2">
+        <parameter name="test-name" value="Parallel test 2"/>
+        <classes>
+            <class name="tesena.automation.training.tests.example_3.ParallelTest" />
+        </classes>
+    </test>
+</suite>
