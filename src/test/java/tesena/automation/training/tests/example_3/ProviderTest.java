@@ -31,15 +31,16 @@ public class ProviderTest {
     @DataProvider
     public Object [][] dataProvider(){
         return new Object[][]{
-                {'A'},
-                {'B'},
-                {'C'},
-                {'D'}
+                {'A', 5},
+                {'B', 9},
+                {'C', 10},
+                {'D', 78}
         };
     }
 
     @Test(dataProvider = "dataProvider")
-    public void test(char character){
+    public void test(char character, int number){
         System.out.println(character);
+        System.out.println(number);
     }
 }

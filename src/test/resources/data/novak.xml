@@ -1,0 +1,37 @@
+<user>
+    <loginNumber>hornyja4</loginNumber>
+    <password>Honza123456</password>
+    <name>Johny</name>
+    <accounts>
+        <account id="account_1">
+            <accountNumber>123</accountNumber>
+            <bankCode>0800</bankCode>
+            <currency>CZK</currency>
+            <accountName>Basic account</accountName>
+        </account>
+        <account id="account_2">
+            <accountNumber>725435478</accountNumber>
+            <bankCode>0800</bankCode>
+            <currency>EUR</currency>
+            <accountName>Basic account</accountName>
+        </account>
+        <account id="account_3">
+            <accountNumber>6521623</accountNumber>
+            <bankCode>0800</bankCode>
+            <currency>CZK</currency>
+            <accountName>Basic account</accountName>
+        </account>
+        <account id="account_4">
+            <accountNumber>123</accountNumber>
+            <bankCode>0800</bankCode>
+            <currency>CZK</currency>
+            <accountName>Basic account</accountName>
+        </account>
+        <account id="account_5">
+            <accountNumber>123</accountNumber>
+            <bankCode>0800</bankCode>
+            <currency>CZK</currency>
+            <accountName>Basic account</accountName>
+        </account>
+    </accounts>
+</user>

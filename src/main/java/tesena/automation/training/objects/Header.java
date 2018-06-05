@@ -5,22 +5,18 @@ import org.openqa.selenium.support.FindBy;
 import tesena.automation.training.driver.PageObject;
 import tesena.automation.training.factory.POFactory;
 
-public class DefaultPage extends PageObject {
+public class Header extends PageObject {
 
-    @FindBy(xpath = "//a[@href='/login']")
-    private WebElement login;
+    @FindBy(xpath = "//a[@href='/projects']")
+    private WebElement projects;
 
     @Override
     public void synchronize() {
-        waitForElement(login);
+        waitForElement(projects);
     }
 
-    public LoginPage clickToLogin() {
-        login.click();
+    public ProjectsPage clickToProjects() {
+        projects.click();
         return POFactory.createObject();
-    }
-
-    public int sum(int a, int b) {
-        return a + b;
     }
 }

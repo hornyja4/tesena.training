@@ -29,7 +29,7 @@ public class TestConfiguration {
         System.out.println("login done");
     }
 
-    @Test(enabled = false)
+    @Test
     public void logout() {
         System.out.println("logout done");
     }

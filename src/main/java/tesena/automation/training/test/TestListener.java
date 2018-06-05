@@ -20,11 +20,10 @@ public class TestListener implements ITestListener {
         DriverManager driverManager = DriverManager.getInstance();
         File screenshot = driverManager.getDriver().getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(screenshot, new File("..\\target\\images\\screenshot.png"));
+            FileUtils.copyFile(screenshot, new File("target\\images\\screenshot.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         System.out.println("Test failed.");
     }
 

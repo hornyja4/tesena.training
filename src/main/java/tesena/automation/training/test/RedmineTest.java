@@ -3,14 +3,14 @@ package tesena.automation.training.test;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
+import tesena.automation.training.driver.DriverManager;
 import tesena.automation.training.driver.PropertiesManager;
 
+@Listeners({TestListener.class})
 public class RedmineTest {
 
-    @Parameters({"browser", "run"})
+    @Parameters({"browser", "platform", "run", "webUrl", "remoteUrl"})
     @BeforeClass
     public void init(@Optional("CHROME") String browser,
                      @Optional("WINDOWS") String platform,
@@ -26,4 +26,8 @@ public class RedmineTest {
         PropertiesManager.setCapabilities(capabilities);
     }
 
+    @AfterClass
+    public void reset() {
+        DriverManager.getInstance().quit();
+    }
 }

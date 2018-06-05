@@ -1,6 +1,7 @@
 package tesena.automation.training.factory;
 
 import tesena.automation.training.data.User;
+import tesena.automation.training.data.Users;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -9,8 +10,8 @@ import java.io.File;
 public class DataFactory {
     private static File dataFolder = new File("src\\test\\resources");
 
-    public User createUser(String fileName) {
-        return createObjectFromXML(User.class, fileName);
+    public static User createUser(Users users) {
+        return createObjectFromXML(User.class, users.getFileName());
     }
 
     @SuppressWarnings("unchecked")

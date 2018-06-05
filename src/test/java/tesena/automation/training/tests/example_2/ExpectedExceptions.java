@@ -4,10 +4,9 @@ import org.testng.annotations.Test;
 
 public class ExpectedExceptions {
 
-    @Test(expectedExceptions = RuntimeException.class)
+    @Test(expectedExceptions = InputException.class)
     public void testException() {
         System.out.println("testException");
-        throw new RuntimeException("Exception at testException");
+        throw new InputException("Exception at testException");
     }
-
 }

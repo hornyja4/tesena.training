@@ -8,9 +8,19 @@ public class User {
     private String loginNumber;
     private String password;
     private String name;
+    private AccountMap accounts;
 
     public String getLoginNumber() {
         return loginNumber;
+    }
+
+    public Account getAccount(String accountId) {
+        return accounts.getAccount(accountId);
+    }
+
+    @XmlElement
+    public void setAccounts(AccountMap accounts) {
+        this.accounts = accounts;
     }
 
     @XmlElement
