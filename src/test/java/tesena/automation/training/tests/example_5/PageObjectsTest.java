@@ -1,8 +1,5 @@
 package tesena.automation.training.tests.example_5;
 
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 import tesena.automation.training.data.User;
 import tesena.automation.training.data.Users;
@@ -21,13 +18,8 @@ public class PageObjectsTest extends RedmineTest {
                 .clickToLogin()
                 .login(user.getLoginNumber(), user.getPassword())
                 .clickToProjects()
-                .projectDetail("A3")
+                .projectDetail("Biom")
                 .newIssue()
                 .createIssue(user.getAccount("account_1").getAccountName(), user.getAccount("account_1").getAccountNumber(), "Urgent");
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

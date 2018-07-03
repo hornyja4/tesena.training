@@ -2,7 +2,6 @@ package tesena.automation.training.tests.example_3;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.lang.reflect.Method;
 
 public class ProviderTest {
