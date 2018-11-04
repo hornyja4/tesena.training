@@ -10,7 +10,6 @@ public class POFactory {
     private static DriverManager driverManager;
 
     public static void processPageObjectComponents(PageObject pageObject) {
-        driverManager = DriverManager.getInstance();
         for (Field field: pageObject.getClass().getDeclaredFields()) {
             if (isPageObject(field)) {
                 PageObject object = null;
