@@ -9,7 +9,6 @@ import tesena.automation.training.factory.POFactory;
 public class LoginPage extends PageObject {
     private WebElement username;
     private WebElement password;
-    private Table table;
 
     @FindBy(xpath = "//input[@type='submit']")
     private WebElement submit;
@@ -22,7 +21,6 @@ public class LoginPage extends PageObject {
     public HomePage login(String username, String pwd) {
         this.username.sendKeys(username);
         password.sendKeys(pwd);
-        table.select();
         submit.click();
         return POFactory.createObject();
     }

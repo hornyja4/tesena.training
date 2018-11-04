@@ -18,7 +18,7 @@ public class PageObjectsTest extends RedmineTest {
                 .clickToLogin()
                 .login(user.getLoginNumber(), user.getPassword())
                 .clickToProjects()
-                .projectDetail("Biom")
+                .projectDetail("Capstone PRJ")
                 .newIssue()
                 .createIssue(user.getAccount("account_1").getAccountName(), user.getAccount("account_1").getAccountNumber(), "Urgent");
     }
