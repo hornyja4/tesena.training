@@ -8,6 +8,7 @@ public abstract class PageObject {
 
     public PageObject() {
         PageFactory.initElements(driverManager.getDriver(), this);
+        driverManager.waitForPageToLoad();
         synchronize();
     }
 
