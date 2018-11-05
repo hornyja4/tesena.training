@@ -39,7 +39,6 @@ public class ProviderTest {
 
     @Test(dataProvider = "dataProvider")
     public void test(char character, int number){
-        System.out.println(character);
-        System.out.println(number);
+        System.out.println(character + ":" + number);
     }
 }

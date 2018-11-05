@@ -3,7 +3,6 @@ package tesena.automation.training.objects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import tesena.automation.training.driver.PageObject;
-import tesena.automation.training.factory.POFactory;
 
 public class DefaultPage extends PageObject {
 
@@ -15,9 +14,8 @@ public class DefaultPage extends PageObject {
         waitForElement(login);
     }
 
-    public LoginPage clickToLogin() {
+    public void clickToLogin() {
         login.click();
-        return POFactory.createObject();
     }
 
     public int sum(int a, int b) {
