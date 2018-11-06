@@ -15,22 +15,26 @@ public class Component implements WebElement {
 
     @Override
     public void click() {
+        findElement().click();
+    }
 
+    private WebElement findElement() {
+        return driverManager.getDriver().findElement(By.xpath(xpath));
     }
 
     @Override
     public void submit() {
-
+        findElement().submit();
     }
 
     @Override
     public void sendKeys(CharSequence... charSequences) {
-
+        findElement().sendKeys(charSequences);
     }
 
     @Override
     public void clear() {
-
+        findElement().clear();
     }
 
     @Override

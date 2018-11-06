@@ -8,11 +8,20 @@
          "seleniumProtocol":"WebDriver",   
          "cleanSession": true,
          "webdriver.chrome.driver":"C:/tools/chromedriver.exe"
+      },
+      {  
+         "browserName":"firefox",
+         "maxInstances":5,
+         "acceptSslCerts": true,
+         "javascriptEnabled": true,
+         "seleniumProtocol":"WebDriver",   
+         "cleanSession": true,
+         "webdriver.chrome.driver":"C:/tools/geckodriver.exe"
       }
    ],
    "proxy":"org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
    "maxSession":5,
-   "port":5555,
+   "port":6666,
    "register":true,
    "registerCycle":5000,
    "hub":"http://localhost:4444",

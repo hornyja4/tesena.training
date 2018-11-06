@@ -60,7 +60,7 @@ public class DataFactory {
         try {
             URL[] urls = new URL[]{dataFolder.toURI().toURL()};
             ClassLoader loader = new URLClassLoader(urls);
-            return new String(ResourceBundle.getBundle("language", new Locale("cs", "CZ"), loader).getString(value).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+            return new String(ResourceBundle.getBundle("language", Locale.getDefault(), loader).getString(value).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (MissingResourceException exception) {

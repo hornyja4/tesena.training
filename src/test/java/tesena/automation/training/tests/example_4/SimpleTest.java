@@ -49,6 +49,5 @@ public class SimpleTest extends ParentTest{
         form.findElement(By.xpath(".//input[@id='issue_subject']")).sendKeys(subject);
         form.findElement(By.xpath(".//textarea[@id='issue_description']")).sendKeys(description);
         form.findElement(By.xpath(".//input[@type='submit']")).click();
-
     }
 }

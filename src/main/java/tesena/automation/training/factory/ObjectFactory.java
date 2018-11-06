@@ -1,9 +1,11 @@
 package tesena.automation.training.factory;
 
+import tesena.automation.training.annotation.HasXpath;
 import tesena.automation.training.component.Component;
 import tesena.automation.training.driver.DriverManager;
 import tesena.automation.training.driver.PageObject;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
@@ -25,6 +27,12 @@ public class ObjectFactory {
                 Component component = null;
                 try {
                     component = field.getType().asSubclass(Component.class).getConstructor(DriverManager.class).newInstance(driverManager);
+                    for (Annotation annotation: field.getDeclaredAnnotations()) {
+                        if (annotation.annotationType().equals(HasXpath.class)) {
+                            HasXpath hasXpath = (HasXpath) annotation;
+                            component.setXpath(hasXpath.xpath());
+                        }
+                    }
                 } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
                     e.printStackTrace();
                 }

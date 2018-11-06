@@ -5,7 +5,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 import tesena.automation.training.driver.DriverManager;
 import tesena.automation.training.driver.TestProperties;
+import tesena.automation.training.listeners.LoggerListener;
 
+@Listeners({LoggerListener.class})
 public class RedmineTest {
     protected DriverManager driverManager;
 
@@ -19,6 +21,7 @@ public class RedmineTest {
         TestProperties properties = new TestProperties();
         properties.setRemoteUrl(remoteUrl);
         properties.setWebUrl(webUrl);
+        properties.setRun(run);
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName(browser);
         capabilities.setPlatform(Platform.valueOf(platform));
