@@ -28,6 +28,6 @@ public class RedmineTest {
 
     @AfterClass
     public void reset() {
-        //driverManager.quit();
+        driverManager.quit();
     }
 }
