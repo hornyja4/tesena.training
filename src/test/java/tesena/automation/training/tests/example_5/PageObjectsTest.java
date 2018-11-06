@@ -8,11 +8,10 @@ import tesena.automation.training.objects.DefaultPage;
 import tesena.automation.training.test.RedmineTest;
 
 public class PageObjectsTest extends RedmineTest {
-    private User user = DataFactory.createUser(Users.NOVAK);
 
     @Test
     public void loginTest() {
         DefaultPage defaultPage = new DefaultPage(driverManager);
-        defaultPage.component();
+        defaultPage.clickToLogin();
     }
 }
