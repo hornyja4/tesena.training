@@ -24,8 +24,7 @@ public class SimpleTest extends ParentTest{
 
     @Test(dataProvider = "dataProvider", testName = "test")
     public void test(String subject, String description) {
-        throw new RuntimeException();
-        /*
+
         remoteWebDriver
                 .findElement(By.xpath("//a[@href='/projects']"))
                 .click();
@@ -50,6 +49,6 @@ public class SimpleTest extends ParentTest{
         form.findElement(By.xpath(".//input[@id='issue_subject']")).sendKeys(subject);
         form.findElement(By.xpath(".//textarea[@id='issue_description']")).sendKeys(description);
         form.findElement(By.xpath(".//input[@type='submit']")).click();
-        */
+
     }
 }
