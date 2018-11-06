@@ -6,8 +6,8 @@ public class ParallelTest {
     private String testName = "";
 
     @BeforeTest
-    @Parameters({"test-name"})
-    public void beforeTest(String testName) {
+    @Parameters({"test-name", "browser"})
+    public void beforeTest(String testName, @Optional("CHROME") String browser) {
         this.testName = testName;
         long id = Thread.currentThread().getId();
         System.out.println("Before test: " + testName + ". Thread id is: " + id);

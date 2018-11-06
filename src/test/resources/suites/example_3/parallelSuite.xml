@@ -3,13 +3,13 @@
     <test name="Parallel test 1">
         <parameter name="test-name" value="Parallel test 1"/>
         <classes>
-            <class name="tesena.automation.training.tests.example_3.ParallelTest" />
+            <class name="tesena.automation.training.tests.example_4.SimpleTest" />
         </classes>
     </test>
     <test name="Parallel test 2">
-        <parameter name="test-name" value="Parallel test 2"/>
+        <parameter name="test-name" value="Parallel test 1"/>
         <classes>
-            <class name="tesena.automation.training.tests.example_3.ParallelTest" />
+            <class name="tesena.automation.training.tests.example_4.SimpleTest" />
         </classes>
     </test>
 </suite>

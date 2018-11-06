@@ -9,7 +9,7 @@ public class RedmineTest {
 
     @Parameters({"browser", "version", "env"})
     @BeforeSuite
-    public void init(@Optional("chrome") String browser, @Optional("65") int version, @Optional("UAT") String env) {
+    public void init(String browser, @Optional("65") int version, @Optional("UAT") String env) {
         this.browser = browser;
         System.out.println(browser + ", " + version + ", " + env);
     }

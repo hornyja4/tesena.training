@@ -2,7 +2,6 @@ package tesena.automation.training.factory;
 
 import tesena.automation.training.data.User;
 import tesena.automation.training.data.Users;
-import tesena.automation.training.driver.PropertiesManager;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

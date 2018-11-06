@@ -8,4 +8,14 @@ public class TestClass {
     public void test() {
         System.out.println("Test done");
     }
+
+    @Test
+    public void test2() {
+        System.out.println("Test done");
+    }
+
+    @Test
+    public void test3() {
+        System.out.println("Test done");
+    }
 }

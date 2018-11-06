@@ -12,8 +12,7 @@ public class PageObjectsTest extends RedmineTest {
 
     @Test
     public void loginTest() {
-        DefaultPage defaultPage = new DefaultPage();
-        defaultPage
-                .clickToLogin();
+        DefaultPage defaultPage = new DefaultPage(driverManager);
+        defaultPage.component();
     }
 }

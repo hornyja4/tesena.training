@@ -13,21 +13,10 @@ import java.net.URL;
 
 public class DriverManager {
     private RemoteWebDriver driver;
-    private static DriverManager instance;
+    private TestProperties properties;
 
-    /**
-     * Singleton pattern
-     *
-     * @return DriverManager instance
-     */
-    public static DriverManager getInstance() {
-        if (instance == null) {
-            instance = new DriverManager();
-        }
-        return instance;
-    }
-
-    private DriverManager() {
+    public DriverManager(TestProperties testProperties) {
+        this.properties = testProperties;
         getDriver();
     }
 
@@ -36,19 +25,18 @@ public class DriverManager {
             return driver;
         }
         initDrivers();
-        if (PropertiesManager.isRemote()) {
+        if (properties.isRemote()) {
             try {
-                URL url = new URL(PropertiesManager.getRemoteUrl());
-                driver = new RemoteWebDriver(url, PropertiesManager.getCapabilities());
-
+                URL url = new URL(properties.getRemoteUrl());
+                driver = new RemoteWebDriver(url, properties.getCapabilities());
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
         } else {
-            Platform platform = PropertiesManager.getPlatform();
+            Platform platform = properties.getPlatform();
             switch (platform) {
                 case WINDOWS:
-                    String browserName = PropertiesManager.getBrowserName();
+                    String browserName = properties.getBrowserName();
                     switch (browserName) {
                         case "CHROME":
                             driver = new ChromeDriver();
@@ -67,7 +55,7 @@ public class DriverManager {
                     throw new RuntimeException("You set wrong platform. Options are WINDOWS or ANDROID");
             }
         }
-        driver.get(PropertiesManager.getWebUrl());
+        driver.get(properties.getWebUrl());
         driver.manage().window().maximize();
         return driver;
     }
