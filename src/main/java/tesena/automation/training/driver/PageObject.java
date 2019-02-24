@@ -13,8 +13,8 @@ public abstract class PageObject {
 
     public PageObject(DriverManager driverManager) {
         this.driverManager = driverManager;
-        //PageFactory.initElements(driverManager.getDriver(), this);
-        ObjectFactory.processComponents(this, driverManager);
+        PageFactory.initElements(driverManager.getDriver(), this);
+        //ObjectFactory.processComponents(this, driverManager);
         driverManager.waitForPageToLoad();
         synchronize();
     }

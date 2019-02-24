@@ -3,14 +3,12 @@ package tesena.automation.training.tests.example_4;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
+import org.testng.*;
 
 import java.io.File;
 import java.io.IOException;
 
-public class SimpleListener implements ITestListener {
+public class SimpleListener implements ITestListener, ISuiteListener {
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -24,11 +22,12 @@ public class SimpleListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
+        System.out.println("FAILED");
         RemoteWebDriver driver = ParentTest.remoteWebDriver;
         File screen = driver.getScreenshotAs(OutputType.FILE);
         try {
-            new File("..\\target\\images").mkdirs();
-            FileUtils.copyFile(screen, new File("..\\target\\images\\screen.jpg"));
+            new File("target\\images").mkdirs();
+            FileUtils.copyFile(screen,  new File("target\\images\\screen.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -51,6 +50,16 @@ public class SimpleListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext iTestContext) {
+
+    }
+
+    @Override
+    public void onStart(ISuite suite) {
+
+    }
+
+    @Override
+    public void onFinish(ISuite suite) {
 
     }
 }

@@ -10,11 +10,11 @@ public class PageObjectsTest extends RedmineTest {
     public void loginTest() {
         DefaultPage defaultPage = new DefaultPage(driverManager);
         defaultPage
-                .clickToLogin();
-                /*.login("hornyja", "Johny123456")
+                .clickToLogin()
+                .login("hornyja4", "Johny123456")
                 .projects()
-                .openProjectDetail("MC200")
+                .openProjectDetail("Hoho")
                 .newIssue()
-                .fillIssueForm("new issue", "desc");*/
+                .fillIssueForm("new issue", "desc");
     }
 }

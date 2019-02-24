@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class SimpleTest extends ParentTest{
+public class SimpleTest extends ParentTest {
 
     @DataProvider
     public Object [][] dataProvider(){

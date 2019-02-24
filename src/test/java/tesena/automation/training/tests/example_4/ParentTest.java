@@ -16,7 +16,7 @@ public class ParentTest {
 
     @BeforeClass
     @Parameters({"name", "password"})
-    public void login(@Optional("hornyja4") String name, @Optional("Honza123456") String password) {
+    public void login(@Optional("hornyja4") String name, @Optional("Johny123456") String password) {
         System.setProperty("webdriver.chrome.driver", "C://tools//chromedriver.exe");
         remoteWebDriver = new ChromeDriver();
         remoteWebDriver.manage().window().maximize();
