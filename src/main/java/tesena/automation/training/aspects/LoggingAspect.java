@@ -11,7 +11,6 @@ import java.util.Arrays;
 
 @Aspect
 public class LoggingAspect {
-    String test = "clean test -Dtest=PageObjectsTest";
 
     @Pointcut("execution(* *.*(..)) && this(tesena.automation.training.driver.PageObject+)")
     public void pageObjectMethods(){
@@ -29,7 +28,6 @@ public class LoggingAspect {
                 .append(".")
                 .append(methodName)
                 .append(Arrays.toString(arguments));
-
         TestLogger.getLogger().info(builder.toString());
     }
 }

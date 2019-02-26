@@ -13,7 +13,7 @@ public class PageObjectsTest extends RedmineTest {
                 .clickToLogin()
                 .login("hornyja4", "Johny123456")
                 .projects()
-                .openProjectDetail("Hoho")
+                .openProjectDetail("lims")
                 .newIssue()
                 .fillIssueForm("new issue", "desc");
     }

@@ -27,7 +27,6 @@
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/suites/example_3/parallelSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/suites/example_3/parameterSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

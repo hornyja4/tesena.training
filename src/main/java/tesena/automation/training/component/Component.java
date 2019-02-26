@@ -9,7 +9,7 @@ public class Component implements WebElement {
     private String xpath;
     private DriverManager driverManager;
 
-    public Component(DriverManager driverManager) {
+    protected Component(DriverManager driverManager) {
         this.driverManager = driverManager;
     }
 
@@ -74,7 +74,7 @@ public class Component implements WebElement {
 
     @Override
     public boolean isDisplayed() {
-        return false;
+        return findElement().isDisplayed();
     }
 
     @Override

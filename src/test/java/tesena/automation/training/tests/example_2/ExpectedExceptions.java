@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class ExpectedExceptions {
 
-    @Test(expectedExceptions = RuntimeException.class)
+    @Test(expectedExceptions = FieldException.class)
     public void testException() {
         System.out.println("testException");
         throw new InputException("Exception at testException");

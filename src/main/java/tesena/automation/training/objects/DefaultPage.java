@@ -2,6 +2,8 @@ package tesena.automation.training.objects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import tesena.automation.training.annotation.HasXpath;
+import tesena.automation.training.component.Anchor;
 import tesena.automation.training.driver.DriverManager;
 import tesena.automation.training.driver.PageObject;
 

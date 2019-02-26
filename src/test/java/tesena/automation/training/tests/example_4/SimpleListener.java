@@ -26,7 +26,9 @@ public class SimpleListener implements ITestListener, ISuiteListener {
         RemoteWebDriver driver = ParentTest.remoteWebDriver;
         File screen = driver.getScreenshotAs(OutputType.FILE);
         try {
-            new File("target\\images").mkdirs();
+            File directory = new File("target\\images");
+            directory.mkdirs();
+            System.out.println(directory.getPath());
             FileUtils.copyFile(screen,  new File("target\\images\\screen.jpg"));
         } catch (IOException e) {
             e.printStackTrace();

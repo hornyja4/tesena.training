@@ -33,7 +33,7 @@ public class SimpleTest extends ParentTest {
         waitForElement(By.id("projects-index"), 10);
 
         remoteWebDriver                                                       //(text(), 'Anna')
-                .findElement(By.xpath("//div[@id='projects-index']//a[contains(@href, 'matt')]"))
+                .findElement(By.xpath("//div[@id='projects-index']//a[contains(@href, 'emsr')]"))
                 .click();
 
         waitForElement(By.xpath("//a[contains(@href, 'issues/new')]"), 10);
@@ -44,7 +44,6 @@ public class SimpleTest extends ParentTest {
                 .click();
 
         waitForElement(By.id("issue-form"), 10);
-
         WebElement form = remoteWebDriver.findElement(By.id("issue-form"));
         form.findElement(By.xpath(".//input[@id='issue_subject']")).sendKeys(subject);
         form.findElement(By.xpath(".//textarea[@id='issue_description']")).sendKeys(description);

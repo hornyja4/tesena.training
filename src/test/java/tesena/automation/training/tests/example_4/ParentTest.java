@@ -2,6 +2,7 @@ package tesena.automation.training.tests.example_4;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Wait;
@@ -17,7 +18,7 @@ public class ParentTest {
     @BeforeClass
     @Parameters({"name", "password"})
     public void login(@Optional("hornyja4") String name, @Optional("Johny123456") String password) {
-        System.setProperty("webdriver.chrome.driver", "C://tools//chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\tools\\chromedriver.exe");
         remoteWebDriver = new ChromeDriver();
         remoteWebDriver.manage().window().maximize();
         remoteWebDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

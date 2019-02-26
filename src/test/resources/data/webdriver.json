@@ -16,7 +16,7 @@
          "javascriptEnabled": true,
          "seleniumProtocol":"WebDriver",   
          "cleanSession": true,
-         "webdriver.chrome.driver":"C:/tools/geckodriver.exe"
+         "webdriver.gecko.driver":"C:/tools/geckodriver.exe"
       }
    ],
    "proxy":"org.openqa.grid.selenium.proxy.DefaultRemoteProxy",

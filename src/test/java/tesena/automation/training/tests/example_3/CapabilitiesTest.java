@@ -1,5 +1,7 @@
 package tesena.automation.training.tests.example_3;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -7,30 +9,62 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.*;
+import tesena.automation.training.tests.example_4.ParentTest;
+import tesena.automation.training.tests.example_4.SimpleListener;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Listeners(SimpleListener.class)
 public class CapabilitiesTest {
+    Map<String, Object> capabilitiesMap = new HashMap<>();
+    ChromeDriver driver;
 
-    @Test
-    public void chromeOptionsTest(){
-        Map<String, Object> capabilitiesMap = new HashMap<>();
-        List<String> options = new ArrayList<>();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        System.setProperty("webdriver.chromedriver.driver", "");
-
-        chromeOptions.setExperimentalOption("prefs", capabilitiesMap);
-        chromeOptions.addArguments(options);
-        ChromeDriver driver = new ChromeDriver(chromeOptions);
+    @Parameters({"javascriptEnabled"})
+    @BeforeSuite
+    public void init(@Optional("true") boolean javascriptEnabled) {
+        capabilitiesMap.put("javascriptEnabled", javascriptEnabled);
     }
 
     @Test
+    public void chromeOptionsTest(){
+        List<String> options = new ArrayList<>();
+        options.add("--headless");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        System.setProperty("webdriver.chrome.driver", "C:\\tools\\chromedriver.exe");
+
+        chromeOptions.setExperimentalOption("prefs", capabilitiesMap);
+        chromeOptions.addArguments(options);
+        driver = new ChromeDriver(chromeOptions);
+        driver.get("http://www.seznam.cz/");
+        throw new RuntimeException("");
+    }
+
+    @AfterTest
+    public void reset() {
+        File screen = driver.getScreenshotAs(OutputType.FILE);
+        try {
+            File directory = new File("target\\images");
+            directory.mkdirs();
+            System.out.println(directory.getPath());
+            FileUtils.copyFile(screen,  new File("target\\images\\screen.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (driver != null) {
+            driver.close();
+            driver.quit();
+        }
+    }
+
+    //@Test
     public void firefoxOptionsTest(){
         FirefoxOptions options = new FirefoxOptions();
         FirefoxProfile firefoxProfile = new FirefoxProfile();
@@ -54,7 +88,7 @@ public class CapabilitiesTest {
         FirefoxDriver driver = new FirefoxDriver(options);
     }
 
-    @Test
+    //@Test
     public void ieOptionsTest(){
         InternetExplorerOptions options = new InternetExplorerOptions();
         Map<String, Object> testCapabilities = new HashMap<>();
