@@ -1,7 +1,10 @@
 package tesena.automation.training.tests.example_3;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,23 +12,21 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
-import tesena.automation.training.tests.example_4.ParentTest;
-import tesena.automation.training.tests.example_4.SimpleListener;
+import tesena.automation.training.test.RBTest;
+import tesena.automation.training.test.SimpleTest;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
-@Listeners(SimpleListener.class)
-public class CapabilitiesTest {
-    Map<String, Object> capabilitiesMap = new HashMap<>();
-    ChromeDriver driver;
+public class CapabilitiesTest extends SimpleTest {
+    private Map<String, Object> capabilitiesMap = new HashMap<>();
+    private ChromeDriver driver;
 
     @Parameters({"javascriptEnabled"})
     @BeforeSuite
@@ -34,17 +35,19 @@ public class CapabilitiesTest {
     }
 
     @Test
-    public void chromeOptionsTest(){
+    public void chromeOptionsTest() {
         List<String> options = new ArrayList<>();
         options.add("--headless");
         ChromeOptions chromeOptions = new ChromeOptions();
-        System.setProperty("webdriver.chrome.driver", "C:\\tools\\chromedriver.exe");
 
         chromeOptions.setExperimentalOption("prefs", capabilitiesMap);
         chromeOptions.addArguments(options);
         driver = new ChromeDriver(chromeOptions);
-        driver.get("http://www.seznam.cz/");
-        throw new RuntimeException("");
+        driver.manage().window().maximize();
+        driver.get("http://seznam.cz");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//a[text()='Prodejci']"));
+        element.click();
     }
 
     @AfterTest
@@ -53,8 +56,7 @@ public class CapabilitiesTest {
         try {
             File directory = new File("target\\images");
             directory.mkdirs();
-            System.out.println(directory.getPath());
-            FileUtils.copyFile(screen,  new File("target\\images\\screen.jpg"));
+            FileUtils.copyFile(screen, new File("target\\images\\screen.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,38 +66,17 @@ public class CapabilitiesTest {
         }
     }
 
-    //@Test
-    public void firefoxOptionsTest(){
+    @Test
+    public void firefoxOptionsTest() {
         FirefoxOptions options = new FirefoxOptions();
         FirefoxProfile firefoxProfile = new FirefoxProfile();
-        Map<String, Object> testCapabilities = new HashMap<>();
-        Map<String, String> preferences = new HashMap<>();
-        Map<String, String> profile = new HashMap<>();
-
-        System.setProperty("webdriver.gecko.driver", "");
-        System.setProperty("webdriver.firefox.bin", "");
-
-        for (Map.Entry<String, Object> capability : testCapabilities.entrySet()) {
-            options.setCapability(capability.getKey(), capability.getValue());
-        }
-        for (Map.Entry<String, String> capabilities : preferences.entrySet()) {
-            options.addPreference(capabilities.getKey(), capabilities.getValue());
-        }
-        for (Map.Entry<String, String> capabilities : profile.entrySet()) {
-            firefoxProfile.setPreference(capabilities.getKey(), capabilities.getValue());
-        }
         options.setProfile(firefoxProfile);
         FirefoxDriver driver = new FirefoxDriver(options);
     }
 
-    //@Test
-    public void ieOptionsTest(){
+    @Test
+    public void ieOptionsTest() {
         InternetExplorerOptions options = new InternetExplorerOptions();
-        Map<String, Object> testCapabilities = new HashMap<>();
-
-        for (Map.Entry<String, Object> capabilities : testCapabilities.entrySet()) {
-            options.setCapability(capabilities.getKey(), capabilities.getValue());
-        }
         InternetExplorerDriver driver = new InternetExplorerDriver(options);
     }
 }

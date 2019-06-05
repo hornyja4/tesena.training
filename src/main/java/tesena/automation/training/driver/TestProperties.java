@@ -13,21 +13,21 @@ public class TestProperties {
         this.capabilities = capabilities;
     }
 
-    public Platform getPlatform(){
+    Platform getPlatform(){
         if(capabilities == null){
             throw new RuntimeException("You did not set capabilities.");
         }
         return capabilities.getPlatform();
     }
 
-    public String getBrowserName(){
+    String getBrowserName(){
         if(capabilities == null){
             throw new RuntimeException("You did not set capabilities.");
         }
         return capabilities.getBrowserName();
     }
 
-    public boolean isRemote(){
+    boolean isRemote(){
         return run.equals("REMOTE");
     }
 
@@ -35,11 +35,11 @@ public class TestProperties {
         this.run = run;
     }
 
-    public DesiredCapabilities getCapabilities(){
+    DesiredCapabilities getCapabilities(){
         return capabilities;
     }
 
-    public String getWebUrl() {
+    String getWebUrl() {
         return webUrl;
     }
 
@@ -47,7 +47,7 @@ public class TestProperties {
         this.webUrl = webUrl;
     }
 
-    public String getRemoteUrl() {
+    String getRemoteUrl() {
         return remoteUrl;
     }
 

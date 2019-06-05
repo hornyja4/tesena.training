@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Parameter test">
     <listeners>
-        <listener class-name="tesena.automation.training.test.TestListener"/>
+        <listener class-name="tesena.automation.training.listeners.MyListener"/>
     </listeners>
     <parameter name="browser" value="firefox"/>
     <parameter name="version" value="66"/>

@@ -1,0 +1,84 @@
+<!--
+  ~ =============================================================================
+  ~ Copyright (c) 2016-2019, SmartDriver team
+  ~
+  ~ Licensed under the EULA license found at LICENSE.txt;
+  ~  you may not use this file except in compliance with the License.
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific permissions and limitations under the License.
+  ~ =============================================================================
+  -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div id="headerBox">
+    <div id="innerDiv">innerDiv</div>
+    <div data-test="header-row">
+        <div data-test="header">Header 1</div>
+    </div>
+    <div data-test="header-row">
+        <div data-test="header">Header 2</div>
+    </div>
+    <iframe data-test="frame_1" src="./frame_1.html"></iframe>
+    <iframe id="frame_2" name="frame" src="./frame_2.html"></iframe>
+</div>
+<br>
+<br>
+<br>
+<div>Tabulka transakcí</div>
+<table border="1px solid">
+    <thead>
+        <tr>
+            <th data-test="date">
+                <div>Datum</div>
+            </th>
+            <th data-test="description">
+                <div>Popis</div>
+            </th>
+            <th data-test="amount">
+                <div>Částka</div>
+            </th>
+            <th data-test="currency">
+                <div>Měna</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-test="transaction-0">
+            <td data-test="date">15.6.2018</td>
+            <td data-test="description">Úplatek</td>
+            <td data-test="amount">-100 000</td>
+            <td data-test="currency">Kč</td>
+        </tr>
+        <tr data-test="transaction-1">
+            <td data-test="date">12.6.2018</td>
+            <td data-test="description">Nákup</td>
+            <td data-test="amount">-25 000</td>
+            <td data-test="currency">Kč</td>
+        </tr>
+        <tr data-test="transaction-2">
+            <td data-test="date">1.6.2018</td>
+            <td data-test="description">Výplata</td>
+            <td data-test="amount">10</td>
+            <td data-test="currency">Kč</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<div>Kombo-box pro výběr měny</div>
+<select data-test="currencySelect">
+    <option selected>CZK</option>
+    <option>EUR</option>
+    <option>GBP</option>
+</select>
+</body>
+</html>

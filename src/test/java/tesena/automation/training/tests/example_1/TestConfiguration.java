@@ -2,22 +2,7 @@ package tesena.automation.training.tests.example_1;
 
 import org.testng.annotations.*;
 
-public class TestConfiguration {
-
-    @BeforeSuite
-    public void beforeSuite() {
-        System.out.println("beforeSuite");
-    }
-
-    @BeforeTest
-    public void beforeTest() {
-        System.out.println("beforeTest");
-    }
-
-    @BeforeClass
-    public void beforeClass() {
-        System.out.println("beforeClass");
-    }
+public class TestConfiguration extends ParentTest {
 
     @BeforeMethod
     public void beforeMethod() {

@@ -66,7 +66,7 @@ public class DriverManager {
 
     }
 
-    public void waitForElement(WebElement element) {
+    void waitForElement(WebElement element) {
         Wait<WebDriver> wait = new WebDriverWait(driver, 10);
         ExpectedCondition<Boolean> expectation = driver -> {
             try {
@@ -82,7 +82,7 @@ public class DriverManager {
         }
     }
 
-    public void waitForPageToLoad() {
+    void waitForPageToLoad() {
         ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
         Wait<WebDriver> wait = new WebDriverWait(driver, 10);
         wait.until(input -> expectation.apply(driver));
