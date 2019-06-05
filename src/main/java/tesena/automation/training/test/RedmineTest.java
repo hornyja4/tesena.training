@@ -8,7 +8,7 @@ import tesena.automation.training.driver.TestProperties;
 import tesena.automation.training.listeners.LoggerListener;
 
 @Listeners({LoggerListener.class})
-public class RBTest {
+public class RedmineTest {
     protected DriverManager driverManager;
 
     @Parameters({"browser", "platform", "run", "webUrl", "remoteUrl"})
@@ -31,6 +31,6 @@ public class RBTest {
 
     @AfterClass
     public void reset() {
-        //driverManager.quit();
+        driverManager.quit();
     }
 }
