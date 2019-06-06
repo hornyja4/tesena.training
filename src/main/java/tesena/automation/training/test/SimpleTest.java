@@ -6,7 +6,7 @@ public class SimpleTest {
 
     @BeforeSuite
     public void processDriverSettings() {
-        //System.setProperty("webdriver.chrome.driver", "");
+        System.setProperty("webdriver.chrome.driver", "");
         System.setProperty("webdriver.gecko.driver", "");
         System.setProperty("webdriver.firefox.bin", "");
         System.setProperty("webdriver.ie.driver", "");
