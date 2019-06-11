@@ -1,0 +1,13 @@
+<user>
+    <loginNumber>hornyja4</loginNumber>
+    <password>123456</password>
+    <name>Johny</name>
+    <accounts>
+        <account id="standard_account">
+            <accountName>Bezny ucet</accountName>
+            <accountNumber>123</accountNumber>
+            <bankCode>0800</bankCode>
+            <currency>CZK</currency>
+        </account>
+    </accounts>
+</user>
