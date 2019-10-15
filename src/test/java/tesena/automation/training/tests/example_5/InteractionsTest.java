@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import tesena.automation.training.test.SimpleTest;
 
 public class InteractionsTest extends SimpleTest {
-    WebDriver driver;
+    private WebDriver driver;
 
     @Test
     public void interactions() {

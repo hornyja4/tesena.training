@@ -5,15 +5,19 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
 public class TestLogger {
-    private static Logger logger;
+    private static ThreadLocal<Logger> threadLocal;
 
     public static void initLogger(String testName, String destination) {
         ThreadContext.put("testName", testName);
         ThreadContext.put("fileName", destination);
-        logger = LogManager.getLogger("TestLogger");
+        threadLocal.set(LogManager.getLogger("TestLogger"));
     }
 
     public static Logger getLogger() {
+        Logger logger = threadLocal.get();
+        if (logger == null) {
+            throw new RuntimeException("Logger must be initialized for current thread.");
+        }
         return logger;
     }
 }

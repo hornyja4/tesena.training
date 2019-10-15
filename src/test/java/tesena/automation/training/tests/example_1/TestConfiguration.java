@@ -23,19 +23,4 @@ public class TestConfiguration extends ParentTest {
     public void afterMethod() {
         System.out.println("afterMethod");
     }
-
-    @AfterClass
-    public void afterClass() {
-        System.out.println("afterClass");
-    }
-
-    @AfterTest
-    public void afterTest() {
-        System.out.println("afterTest");
-    }
-
-    @AfterSuite
-    public void afterSuite() {
-        System.out.println("afterSuite");
-    }
 }

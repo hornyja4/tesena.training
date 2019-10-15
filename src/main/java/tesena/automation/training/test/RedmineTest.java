@@ -2,12 +2,13 @@ package tesena.automation.training.test;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import tesena.automation.training.driver.DriverManager;
 import tesena.automation.training.driver.TestProperties;
-import tesena.automation.training.listeners.LoggerListener;
 
-@Listeners({LoggerListener.class})
 public class RedmineTest {
     protected DriverManager driverManager;
 
