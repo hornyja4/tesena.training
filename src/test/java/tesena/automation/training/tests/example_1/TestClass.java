@@ -9,4 +9,14 @@ public class TestClass {
     public void test() {
         System.out.println(DataFactory.getBundleProperty("PAYMENT"));
     }
+
+    @Test
+    public void test2() {
+        System.out.println(DataFactory.getBundleProperty("PAYMENT"));
+    }
+
+    @Test
+    public void test3() {
+        System.out.println(DataFactory.getBundleProperty("PAYMENT"));
+    }
 }

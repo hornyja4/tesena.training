@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 public class DependencyTest {
 
-    @Test
+    @Test()
     public void login() {
         System.out.println("login");
-        //throw new RuntimeException("Exception in login.");
+        throw new RuntimeException("Exception in login.");
     }
 
     @Test(dependsOnMethods = "login")

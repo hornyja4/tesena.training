@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
 public class TestLogger {
-    private static ThreadLocal<Logger> threadLocal;
+    private static ThreadLocal<Logger> threadLocal = new ThreadLocal<>();
 
     public static void initLogger(String testName, String destination) {
         ThreadContext.put("testName", testName);
@@ -18,6 +18,7 @@ public class TestLogger {
         if (logger == null) {
             throw new RuntimeException("Logger must be initialized for current thread.");
         }
+        logger.info("adfsadf");
         return logger;
     }
 }

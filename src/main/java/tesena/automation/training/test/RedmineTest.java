@@ -2,13 +2,12 @@ package tesena.automation.training.test;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import tesena.automation.training.driver.DriverManager;
 import tesena.automation.training.driver.TestProperties;
+import tesena.automation.training.listeners.MyListener;
 
+@Listeners(MyListener.class)
 public class RedmineTest {
     protected DriverManager driverManager;
 
@@ -17,7 +16,7 @@ public class RedmineTest {
     public void init(@Optional("CHROME") String browser,
                      @Optional("WINDOWS") String platform,
                      @Optional("LOCAL") String run,
-                     @Optional("http://www.seznam.cz") String webUrl,
+                     @Optional("http://demo.redmine.org") String webUrl,
                      @Optional("http://localhost:4444/wd/hub") String remoteUrl) {
         TestProperties properties = new TestProperties();
         properties.setRemoteUrl(remoteUrl);

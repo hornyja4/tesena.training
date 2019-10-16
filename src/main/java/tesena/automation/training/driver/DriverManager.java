@@ -61,7 +61,7 @@ public class DriverManager {
     }
 
     private void initDrivers() {
-        System.setProperty("webdriver.chrome.driver", "C:\\tools\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\horny\\Desktop\\SmartDriver\\automationtraining\\src\\main\\resources\\files\\chromedriver_77.exe");
         System.setProperty("webdriver.gecko.driver", "");
 
     }

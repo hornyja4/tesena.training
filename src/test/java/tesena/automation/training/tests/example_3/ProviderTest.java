@@ -27,7 +27,7 @@ public class ProviderTest {
         return result;
     }
 
-    @DataProvider
+    @DataProvider(parallel = true)
     public Object [][] dataProvider(){
         return new Object[][]{
                 {'A', 5},

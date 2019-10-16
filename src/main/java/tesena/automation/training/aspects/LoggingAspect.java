@@ -7,7 +7,4 @@ import org.aspectj.lang.annotation.Before;
 @Aspect
 public class LoggingAspect {
 
-    @Before("pageObjectMethods()")
-    public void logPageObjectMethods(JoinPoint joinPoint) {
-    }
 }
