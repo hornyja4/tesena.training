@@ -61,7 +61,7 @@ public class DriverManager {
     }
 
     private void initDrivers() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\horny\\Desktop\\SmartDriver\\automationtraining\\src\\main\\resources\\files\\chromedriver_77.exe");
+        System.setProperty("webdriver.chrome.driver", "");
         System.setProperty("webdriver.gecko.driver", "");
 
     }
@@ -83,7 +83,10 @@ public class DriverManager {
     }
 
     void waitForPageToLoad() {
-        ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+        ExpectedCondition<Boolean> expectation = driver -> {
+            assert driver != null;
+            return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+        };
         Wait<WebDriver> wait = new WebDriverWait(driver, 10);
         wait.until(input -> expectation.apply(driver));
     }

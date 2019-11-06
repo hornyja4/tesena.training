@@ -16,22 +16,11 @@ import java.util.concurrent.TimeUnit;
 
 @Listeners(NewListener.class)
 public class ListenerTest extends SimpleTest {
-    public static ChromeDriver driver;
+    static ChromeDriver driver;
 
     @Test
     public void testWithListener() {
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get("http://demo.redmine.org");
-        WebElement element = driver.findElement(By.xpath("//a[@href='/login']"));
-        File screenFile = element.getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(screenFile, new File("C:\\Users\\horny\\Desktop\\SmartDriver\\automationtraining\\screens\\element.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        throw new RuntimeException();
     }
 
     @AfterClass

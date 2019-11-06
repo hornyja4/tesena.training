@@ -16,19 +16,5 @@ public class BasicFunctionsTest extends SimpleTest {
     @Test
     public void basicFunctions() throws InterruptedException {
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get("http://demo.redmine.org");
-        List<WebElement> anchors = driver.findElements(By.xpath("//a"));
-        for(WebElement element: anchors) {
-            System.out.println(element.getText());
-        }
-        WebElement login = driver.findElement(By.xpath("//a[@href='/login']"));
-        JavascriptExecutor executor = driver;
-        executor.executeScript("arguments[0].click();", login);
-        //login.click();
-        driver.findElement(By.id("username")).sendKeys("loginName");
-        driver.findElement(By.id("password")).sendKeys("password");
-        Thread.sleep(5000);
     }
 }

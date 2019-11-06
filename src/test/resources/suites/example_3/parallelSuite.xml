@@ -8,8 +8,8 @@
     </test>
     <test name="Parallel test 2">
         <parameter name="test-name" value="Parallel test 2"/>
-        <packages>
-            <package name="test"></package>
-        </packages>
+        <classes>
+            <class name="tesena.automation.training.tests.example_3.ParallelTest" />
+        </classes>
     </test>
 </suite>

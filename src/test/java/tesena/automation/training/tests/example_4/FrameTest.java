@@ -13,26 +13,15 @@ public class FrameTest extends SimpleTest {
     private WebDriver driver;
 
     @Test
-    public void frame() throws InterruptedException {
+    public void frame() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get("file:///C:\\Users\\horny\\Desktop\\SmartDriver\\automationtraining\\src\\main\\resources\\htmlPage.html");
-        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@data-test='frame_1']")));
-        driver.findElement(By.id("frameBox_1"));
-        driver.switchTo().defaultContent();
-        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='frame_2']")));
-        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@data-test='frame_3']")));
-        System.out.println(driver.findElement(By.xpath("//span[@data-test='frame-text']")).getText());
-        driver.switchTo().parentFrame();
-        System.out.println(driver.findElement(By.xpath("//span[@data-test='frame-text']")).getText());
-        Thread.sleep(5000);
-
+        driver.get("file:///");
     }
 
     @AfterTest
     public void reset() {
         driver.quit();
     }
-
 }

@@ -23,12 +23,6 @@ public class NewListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        File screenFile = ListenerTest.driver.getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(screenFile, new File("C:\\Users\\horny\\Desktop\\SmartDriver\\automationtraining\\screens\\screen.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override

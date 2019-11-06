@@ -9,13 +9,10 @@ public class MyListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        String testName = result.getTestClass().getRealClass().getSimpleName();
-        TestLogger.initLogger(testName, "/reports/" + testName + "/" + testName + ".log");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("Test passed");
     }
 
     @Override

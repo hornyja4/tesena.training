@@ -15,16 +15,5 @@ public class ActionsTest extends SimpleTest {
     @Test
     public void actions() throws InterruptedException {
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get("http://alza.cz");
-        WebElement login = driver.findElement(By.xpath("//a[contains(@href, '/be-smart-by-alza')]"));
-        Actions actions = new Actions(driver);
-        Action action = actions
-                .moveToElement(login)
-                .build();
-
-        action.perform();
-        Thread.sleep(5000);
     }
 }
