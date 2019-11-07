@@ -8,7 +8,7 @@ import tesena.automation.training.driver.TestProperties;
 import tesena.automation.training.listeners.MyListener;
 
 @Listeners(MyListener.class)
-public class RedmineTest {
+public class SazkaTest {
     protected DriverManager driverManager;
 
     @Parameters({"browser", "platform", "run", "webUrl", "remoteUrl"})
@@ -16,7 +16,7 @@ public class RedmineTest {
     public void init(@Optional("CHROME") String browser,
                      @Optional("WINDOWS") String platform,
                      @Optional("LOCAL") String run,
-                     @Optional("http://demo.redmine.org") String webUrl,
+                     @Optional("http://sazka.cz") String webUrl,
                      @Optional("http://localhost:4444/wd/hub") String remoteUrl) {
         TestProperties properties = new TestProperties();
         properties.setRemoteUrl(remoteUrl);
