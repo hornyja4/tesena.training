@@ -1,8 +1,10 @@
 package tesena.automation.training.tests.example_1;
 
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-public class TestConfiguration extends ParentTest {
+public class SeleniumTest extends ParentTest {
 
     @BeforeMethod
     public void beforeMethod() {
