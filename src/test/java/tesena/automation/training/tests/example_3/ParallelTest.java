@@ -1,23 +1,17 @@
 package tesena.automation.training.tests.example_3;
 
+import net.bytebuddy.utility.RandomString;
 import org.testng.annotations.*;
 
 public class ParallelTest {
     private String testName = "";
 
-    @BeforeTest
-    @Parameters({"test-name", "browser"})
-    public void beforeTest(String testName, @Optional("CHROME") String browser) {
-        this.testName = testName;
+    @BeforeMethod
+    @Parameters({"browser"})
+    public void beforeTest(@Optional("CHROME") String browser) {
+        this.testName = RandomString.make(10);
         long id = Thread.currentThread().getId();
         System.out.println("Before test: " + testName + ". Thread id is: " + id);
-    }
-
-    @BeforeClass
-    public void beforeClass() {
-        long id = Thread.currentThread().getId();
-        System.out.println("Before class: " + testName + ". Thread id is: "
-                + id);
     }
 
     @Test
@@ -27,14 +21,7 @@ public class ParallelTest {
                 + ". Thread id is: " + id);
     }
 
-    @AfterClass
-    public void afterClass() {
-        long id = Thread.currentThread().getId();
-        System.out.println("After class:  " + testName
-                + ". Thread id is: " + id);
-    }
-
-    @AfterTest
+    @AfterMethod
     public void afterTest() {
         long id = Thread.currentThread().getId();
         System.out.println("After test: " + testName + ". Thread id is: " + id);

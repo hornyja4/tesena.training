@@ -12,6 +12,28 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+    <profiles>
+        <profile>
+            <id>chrome-65-UAT</id>
+            <build>
+                <plugins>
+                    <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.20.1</version>
+                    <configuration>
+                        <argLine>-Dfile.encoding=UTF-8</argLine>
+                        <systemPropertyVariables>
+                            <browser>CHROME</browser>
+                            <version>65</version>
+                            <env>UAT</env>
+                        </systemPropertyVariables>
+                    </configuration>
+                </plugin></plugins>
+
+            </build>
+        </profile>
+    </profiles>
     <build>
         <resources>
             <resource>
@@ -110,7 +132,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.14.2</version>
+            <version>7.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

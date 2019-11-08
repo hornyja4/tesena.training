@@ -1,6 +1,7 @@
 package tesena.automation.training.test;
 
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 import tesena.automation.training.driver.DriverManager;

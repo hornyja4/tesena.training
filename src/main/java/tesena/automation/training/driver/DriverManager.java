@@ -2,7 +2,9 @@ package tesena.automation.training.driver;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -39,10 +41,14 @@ public class DriverManager {
                     String browserName = properties.getBrowserName();
                     switch (browserName) {
                         case "CHROME":
-                            driver = new ChromeDriver();
+                            ChromeOptions chromeOptions = new ChromeOptions();
+                            chromeOptions.setBinary("");
+                            driver = new ChromeDriver(chromeOptions);
                             break;
                         case "FIREFOX":
-                            driver = new FirefoxDriver();
+                            FirefoxOptions firefoxOptions = new FirefoxOptions();
+                            firefoxOptions.setBinary("");
+                            driver = new FirefoxDriver(firefoxOptions);
                             break;
                         case "IE":
                             driver = new InternetExplorerDriver();
@@ -61,12 +67,12 @@ public class DriverManager {
     }
 
     private void initDrivers() {
-        System.setProperty("webdriver.chrome.driver", "");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\horny\\Desktop\\automation\\automationtraining\\src\\main\\resources\\files\\chromedriver_78.exe");
         System.setProperty("webdriver.gecko.driver", "");
 
     }
 
-    void waitForElement(WebElement element) {
+    public void waitForElement(WebElement element) {
         Wait<WebDriver> wait = new WebDriverWait(driver, 10);
         ExpectedCondition<Boolean> expectation = driver -> {
             try {

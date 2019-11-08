@@ -7,7 +7,7 @@ public class DependencyTest {
     @Test()
     public void login() {
         System.out.println("login");
-        throw new RuntimeException("Exception in login.");
+        //throw new RuntimeException("Exception in login.");
     }
 
     @Test(dependsOnMethods = "login")

@@ -13,16 +13,31 @@ public class NewListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-
+        result.getTestClass().getRealClass().getName();
+        System.out.println("Test started: "
+                + result.getTestClass().getRealClass().getName()
+                + "."
+                + result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-
+        System.out.println("Test passed: " + result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
+        if (ListenerTest.driver == null) {
+            return;
+        }
+        File screen = ListenerTest.driver.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(
+                        screen,
+                        new File("/screens/" + result.getMethod().getMethodName() + ".jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -18,7 +18,6 @@ public class TestLogger {
         if (logger == null) {
             throw new RuntimeException("Logger must be initialized for current thread.");
         }
-        logger.info("adfsadf");
         return logger;
     }
 }

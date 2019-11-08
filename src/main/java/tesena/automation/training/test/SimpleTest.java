@@ -12,7 +12,7 @@ public class SimpleTest {
 
     @BeforeSuite
     public void processDriverSettings() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\horny\\Desktop\\SmartDriver\\automationtraining\\src\\main\\resources\\files\\chromedriver_77.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\horny\\Desktop\\automation\\automationtraining\\src\\main\\resources\\files\\chromedriver_78.exe");
         System.setProperty("webdriver.gecko.driver", "");
         System.setProperty("webdriver.firefox.bin", "");
         System.setProperty("webdriver.ie.driver", "");

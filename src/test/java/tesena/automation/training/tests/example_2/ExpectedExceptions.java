@@ -6,6 +6,6 @@ public class ExpectedExceptions {
 
     @Test(expectedExceptions = FieldException.class)
     public void testException() {
-        throw new FieldException();
+        //throw new FieldException();
     }
 }
