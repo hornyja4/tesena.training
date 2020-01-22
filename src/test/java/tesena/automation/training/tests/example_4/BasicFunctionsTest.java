@@ -1,4 +1,4 @@
-package tesena.automation.training.tests.example_3;
+package tesena.automation.training.tests.example_4;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptException;
@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 public class BasicFunctionsTest extends SimpleTest {
 
     @Test
-    public void basicFunctions() throws InterruptedException {
-        driver = new ChromeDriver();
+    public void basicFunctions() {
     }
 }

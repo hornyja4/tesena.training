@@ -24,17 +24,6 @@ public class ListenerTest extends SimpleTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("http://sazka.cz");
-        WebElement sportkaBanner = driver.findElement(By.xpath("//a[@href='/loterie/sportka']"));
-        File screen = sportkaBanner.getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(
-                    screen,
-                    new File("/screens/banner.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        driver.findElement(By.xpath("//a[@abc='asd']"));
     }
 
     @AfterClass
